@@ -74,22 +74,22 @@
                   <Font name="System Bold" size="12.0" />
                </font></TextField>
             <ListView fx:id="listView" layoutX="716.0" layoutY="93.0" prefHeight="229.0" prefWidth="393.0" />
-            <Label fx:id="showWeight" alignment="CENTER" layoutX="1120.0" layoutY="96.0" prefHeight="27.0" prefWidth="60.0" style="-fx-border-color: #2E3348; -fx-border-radius: 10; -fx-background-color: #fafafa;">
+            <Label fx:id="showWeight" alignment="CENTER" layoutX="1122.0" layoutY="96.0" prefHeight="27.0" prefWidth="60.0" style="-fx-border-color: #2E3348; -fx-border-radius: 10; -fx-background-color: #fafafa;">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="1120.0" layoutY="131.0" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #2E3348;" text="weight" textFill="#fafafa">
+            <Label alignment="CENTER" layoutX="1122.0" layoutY="131.0" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #2E3348;" text="weight" textFill="#fafafa">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="showKcal" alignment="CENTER" layoutX="1120.0" layoutY="164.0" prefHeight="27.0" prefWidth="60.0" style="-fx-border-color: #2E3348; -fx-border-radius: 10; -fx-background-color: #fafafa;">
+            <Label fx:id="showKcal" alignment="CENTER" layoutX="1122.0" layoutY="164.0" prefHeight="27.0" prefWidth="60.0" style="-fx-border-color: #2E3348; -fx-border-radius: 10; -fx-background-color: #fafafa;">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="1120.0" layoutY="197.0" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #2E3348;" text="kcal" textFill="#fafafa">
+            <Label alignment="CENTER" layoutX="1122.0" layoutY="197.0" prefHeight="20.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #2E3348;" text="kcal" textFill="#fafafa">
                <font>
                   <Font size="14.0" />
                </font>
