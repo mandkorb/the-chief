@@ -21,8 +21,8 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		primaryStage.setResizable(false);
-			
-		primaryStage.setTitle("ьет-йсуюп");
+		
+		primaryStage.setTitle("The-Chief");
 		primaryStage.getIcons().add(new Image("/images/chef.png"));
 		
 	}

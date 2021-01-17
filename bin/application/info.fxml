@@ -8,28 +8,28 @@
    <children>
       <AnchorPane layoutY="89.0" prefHeight="273.0" prefWidth="602.0" style="-fx-background-color: #fafafa;">
          <children>
-            <Text layoutX="169.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Завдання на курсову роботу" wrappingWidth="263.1499938964844">
+            <Text layoutX="228.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The main task" wrappingWidth="146.14999389648438">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="61.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Визначити ієрархію овочів. Зробити салат. Прорахувати його калорійність. Провести сортування овочів для салату на основі якогось одного з параметрів. Знайти овочі в салаті, що відповідають заданому діапазону калорійності." wrappingWidth="505.3367691040039">
+            <Text layoutX="61.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Define vegetables hierarchy. Make a salad. Calculate its weight and calories. Provide an opportunity to sort ingradients in salad by different parametres. Find vegetables in a salad that match a given calorie range." wrappingWidth="505.3367691040039">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text layoutX="182.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Додаткова інформація" wrappingWidth="263.1499938964844">
+            <Text layoutX="191.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional information" wrappingWidth="220.14999389648438">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Text>
-            <Text layoutX="58.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Для правильного та поживного салату потрібно вибрати не більше 4 основних та 2 додаткових овочів. Одночасно в салаті може знаходитись не більше однієї заправки." wrappingWidth="486.1368179321289">
+            <Text layoutX="58.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For healthy salad you need to choose no more than 4 main and 2 extra vegetables. No more than one sauce can be in a salad at a time." wrappingWidth="486.1368179321289">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
          </children></AnchorPane>
-      <Text fill="#fafafa" layoutX="147.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Курсова робота" wrappingWidth="306.440185546875">
+      <Text fill="#fafafa" layoutX="169.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The coursework" wrappingWidth="263.1499938964844">
          <font>
             <Font name="System Bold Italic" size="35.0" />
          </font>

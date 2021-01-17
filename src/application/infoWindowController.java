@@ -26,12 +26,10 @@ public class infoWindowController {
 				infoWindow.setScene(newScene);
 				infoWindow.showAndWait();
 	    		infoWindow.initModality(Modality.APPLICATION_MODAL);
-	    		infoWindow.setTitle("б╡ймн дндюрйнбн╞ ╡мтнплюж╡╞");				
+	    		infoWindow.setTitle("Additional information window");				
 				infoWindow.setResizable(false);
-				infoWindow.getIcons().add(new Image("file:/chef.png"));
-			} catch (IOException e) {
-				System.out.println("blyad");
-			}            
+				infoWindow.getIcons().add(new Image("/images/chef.png"));
+			} catch (IOException e) {}            
             
     	});
     }
