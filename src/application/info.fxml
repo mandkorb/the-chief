@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="426.0" prefWidth="570.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.infoWindowController">
+   <children>
+      <AnchorPane layoutY="89.0" prefHeight="273.0" prefWidth="602.0" style="-fx-background-color: #fafafa;">
+         <children>
+            <Text layoutX="169.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Завдання на курсову роботу" wrappingWidth="263.1499938964844">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="61.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Визначити ієрархію овочів. Зробити салат. Прорахувати його калорійність. Провести сортування овочів для салату на основі якогось одного з параметрів. Знайти овочі в салаті, що відповідають заданому діапазону калорійності." wrappingWidth="505.3367691040039">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="182.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Додаткова інформація" wrappingWidth="263.1499938964844">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="58.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Для правильного та поживного салату потрібно вибрати не більше 4 основних та 2 додаткових овочів. Одночасно в салаті може знаходитись не більше однієї заправки." wrappingWidth="486.1368179321289">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <Text fill="#fafafa" layoutX="147.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Курсова робота" wrappingWidth="306.440185546875">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
