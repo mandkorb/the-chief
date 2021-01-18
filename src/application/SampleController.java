@@ -103,35 +103,36 @@ public class SampleController {
     private double maxForWeight;
     private double minForKcal;
     private double maxForKcal;
-    
+    String defaultCounterViewStyle = "-fx-text-fill: #2E3348; -fx-border-color: #2E3348;  "
+    		+ "-fx-background-color: #fafafa; -fx-border-radius: 5;";
+    String redCounterViewStyle = "-fx-border-color: red; -fx-text-fill: red; "
+    		+ "-fx-background-color: #fafafa; -fx-border-radius: 5;";
+    String greenCounterViewStyle = "-fx-text-fill: green; -fx-border-color: #2E3348; "
+			+ "-fx-background-color: #fafafa; -fx-border-radius: 5;";
+    String orangeCounterViewStyle = "-fx-text-fill: #dd641d; -fx-border-color: #2E3348; "
+			+ "-fx-background-color: #fafafa; -fx-border-radius: 5;";
     
     private boolean getInputForWeight() {
     	boolean check = true;
     	
-    	
     	try {
     	minForWeight = Double.parseDouble(minForWeightField.getText());
-    	minForWeightField.setStyle("-fx-background-color: #fafafa; "
-    			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+    	minForWeightField.setStyle(defaultCounterViewStyle);
     	} catch(Exception e) {
-    		minForWeightField.setStyle("-fx-background-color: #fafafa; "
-    				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+    		minForWeightField.setStyle(redCounterViewStyle);
     		check = false;
     	}
     	
     	try {
     		maxForWeight = Double.parseDouble(maxForWeightField.getText());
-        	maxForWeightField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+        	maxForWeightField.setStyle(defaultCounterViewStyle);
         	} catch(Exception e) {
-        		maxForWeightField.setStyle("-fx-background-color: #fafafa; "
-        				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+        		maxForWeightField.setStyle(redCounterViewStyle);
         		check = false;
         	}
 
     	if(maxForWeight < minForWeight) {
-    		maxForWeightField.setStyle("-fx-background-color: #fafafa; "
-    				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+    		maxForWeightField.setStyle(redCounterViewStyle);
     		check = false;
     	}
     	
@@ -143,27 +144,22 @@ public class SampleController {
     	   	
     	try {
     	minForKcal = Double.parseDouble(minForKcalField.getText());
-    	minForKcalField.setStyle("-fx-background-color: #fafafa; "
-    			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+    	minForKcalField.setStyle(defaultCounterViewStyle);
     	} catch(Exception e) {
-    		minForKcalField.setStyle("-fx-background-color: #fafafa; "
-    				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+    		minForKcalField.setStyle(redCounterViewStyle);
     		check = false;
     	}
     	
     	try {
     		maxForKcal = Double.parseDouble(maxForKcalField.getText());
-    		maxForKcalField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+    		maxForKcalField.setStyle(defaultCounterViewStyle);
         	} catch(Exception e) {
-        		maxForKcalField.setStyle("-fx-background-color: #fafafa; "
-        				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+        		maxForKcalField.setStyle(redCounterViewStyle);
         		check = false;
         	}
     	
     	if(maxForKcal < minForKcal) {
-    		maxForKcalField.setStyle("-fx-background-color: #fafafa; "
-    				+ "-fx-border-color: red; -fx-border-radius: 5; -fx-text-fill: red;");
+    		maxForKcalField.setStyle(redCounterViewStyle);
     		check = false;
     	}
     	
@@ -172,35 +168,27 @@ public class SampleController {
 
 	private void checkWeight() {
 		if(this.totalWeight == 0) {
-			showWeight.setStyle("-fx-text-fill: #2E3348; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showWeight.setStyle(defaultCounterViewStyle);
 		}
 		else if(this.totalWeight > 0 && this.totalWeight < 200) {
-			showWeight.setStyle("-fx-text-fill: #dd641d; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showWeight.setStyle(orangeCounterViewStyle);
 		} else if(this.totalWeight >= 200 && this.totalWeight <= 280) {
-			showWeight.setStyle("-fx-text-fill: green; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showWeight.setStyle(greenCounterViewStyle);
 		} else if(this.totalWeight > 280) {
-			showWeight.setStyle("-fx-text-fill: red; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showWeight.setStyle(redCounterViewStyle);
 		}
 	}
 	
 	private void checkKcal() {		
 		if(this.totalKcal == 0) {
-			showKcal.setStyle("-fx-text-fill: #2E3348; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showKcal.setStyle(defaultCounterViewStyle);
 		}
 		else if(this.totalKcal > 0 && this.totalKcal < 90) {
-			showKcal.setStyle("-fx-text-fill: #dd641d; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showKcal.setStyle(orangeCounterViewStyle);
 		} else if(this.totalKcal >= 90 && this.totalKcal <= 225) {
-			showKcal.setStyle("-fx-text-fill: green; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showKcal.setStyle(greenCounterViewStyle);
 		} else if(this.totalKcal > 225) {
-			showKcal.setStyle("-fx-text-fill: red; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+			showKcal.setStyle(redCounterViewStyle);
 		}
 	}
 	
@@ -770,20 +758,16 @@ public class SampleController {
     		minForWeightField.setText("");
     		maxForWeightField.setText("");
     		
-    		minForWeightField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
-    		maxForWeightField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+    		minForWeightField.setStyle(defaultCounterViewStyle);
+    		maxForWeightField.setStyle(defaultCounterViewStyle);
     	});
     	
     	reloadKcalRangeButton.setOnAction(event ->{
     		minForKcalField.setText("");
     		maxForKcalField.setText("");
     		
-    		minForKcalField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
-    		maxForKcalField.setStyle("-fx-background-color: #fafafa; "
-        			+ "-fx-border-color: #2E3348; -fx-border-radius: 5;");
+    		minForKcalField.setStyle(defaultCounterViewStyle);
+    		maxForKcalField.setStyle(defaultCounterViewStyle);
     	});
     	
     	/*
@@ -820,10 +804,8 @@ public class SampleController {
     		totalKcal = 0;
     		totalWeight = 0;
     		
-    		showWeight.setStyle("-fx-text-fill: #2E3348; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
-    		showKcal.setStyle("-fx-text-fill: #2E3348; -fx-border-color: #2E3348; "
-					+ "-fx-border-radius: 10; -fx-background-color: #fafafa;");
+    		showWeight.setStyle(defaultCounterViewStyle);
+    		showKcal.setStyle(defaultCounterViewStyle);
     		showWeight.setText(String.valueOf(totalWeight));
     		showKcal.setText(String.valueOf(totalKcal));  
     	});
@@ -843,11 +825,9 @@ public class SampleController {
 				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("info.fxml"));
 				Scene newScene = new Scene(root, 600, 400);
 				infoWindow.setScene(newScene);
-				infoWindow.setTitle("ВІКНО ДОДАТКОВОЇ ІНФОРМАЦІЇ");
+				infoWindow.setTitle("Additional information window");
 				infoWindow.showAndWait();
-			} catch (IOException e) {
-				System.out.println("blyad");
-			}
+			} catch (IOException e) {}
 
     	});
     }
@@ -868,10 +848,10 @@ public class SampleController {
 //    			}
 //			}
 //			
-//			listView.getItems().add("\nЗбереження пройшло успішно!");
+//			listView.getItems().add("\nYou successfully created new salad");
 //			
 //		} else {    			
-//			listView.getItems().add("Не вдалося створити салат. Перевірта ввід і спробуйте ще раз!");
+//			listView.getItems().add("Falied! Check input data and try again");
 //		}
 //	});
 //	
