@@ -194,33 +194,33 @@ public class SampleController {
 	
 	private void printIngradientToListView(Salad ingradient) {
 		
-		listView.getItems().add("  " + ingradient.getName() + "\t\t  " + ingradient.getCategory() + 
-				"\t\t     " + ingradient.getCalories() + "\t\t\t   " + ingradient.getWeight() + " г.");
+		listView.getItems().add("  " + ingradient.getName() + "\t" + ingradient.getCategory() + 
+				"\t" + ingradient.getCalories() + "\t" + ingradient.getWeight() + " г.");
 	}
 	
 	private void printKcalSort(Salad ingradient) {		
-		listViewSorted.getItems().add(ingradient.getName() + " | КАЛОРІЇ: " + ingradient.getCalories());		
+		listViewSorted.getItems().add(ingradient.getName() + " | CALORIES: " + ingradient.getCalories());		
 	}
 	
 	private void printWeightSort(Salad ingradient) {		
-		listViewSorted.getItems().add(ingradient.getName() + " | ВАГА: " + ingradient.getWeight());		
+		listViewSorted.getItems().add(ingradient.getName() + " | WEIGHT: " + ingradient.getWeight());		
 	}
 	
-	Potato potato = new Potato("КАРТОПЛЯ", "БАЗОВИЙ", 77, 90);
-	Tomato tomato = new Tomato("ПОМІДОР", "БАЗОВИЙ", 9, 50);
-	Carrot carrot = new Carrot("МОРКВА", "БАЗОВИЙ", 28, 50);
-	Lettuce lettuce = new Lettuce("ЛИСТЯ САЛАТУ", "ДОДАТОК", 5, 30);
-	Cucumber cucumber = new Cucumber("ОГІРОК", "БАЗОВИЙ", 7, 50);
-	Zucchini zucchini = new Zucchini("КАБАЧОК", "БАЗОВИЙ", 13, 80);
-	Pepper pepper = new Pepper("ПЕРЕЦЬ", "БАЗОВИЙ", 22, 60);
-	Parsley parsley = new Parsley("ПЕТРУШКА", "ДОДАТОК", 4, 15);
-	Radish radish = new Radish("РЕДИСКА", "БАЗОВИЙ", 16, 40);
-	Arugula arugula = new Arugula("РУКОЛА", "ДОДАТОК", 6, 20);
-	Onion onion = new Onion("ЦИБУЛЯ", "ДОДАТОК", 4, 10);
-	Basil basil = new Basil("РУКОЛА", "ДОДАТОК", 6, 20);
-	Oil oil = new Oil("ОЛИВКОВА ОЛІЯ", "ЗАПРАВКА", 155, 30);
-	Yogurt yogurt = new Yogurt("ЙОГУРТ", "ЗАПРАВКА", 45, 30);
-	Cream cream = new Cream("СМЕТАНА", "ЗАПРАВКА", 85, 30);
+	Potato potato = new Potato("POTATO", "BASIC", 77, 90);
+	Tomato tomato = new Tomato("TOMATO", "BASIC", 9, 50);
+	Carrot carrot = new Carrot("CARROT", "BASIC", 28, 50);
+	Lettuce lettuce = new Lettuce("LETTUCE", "EXTRA", 5, 30);
+	Cucumber cucumber = new Cucumber("CUCUMBER", "BASIC", 7, 50);
+	Zucchini zucchini = new Zucchini("ZUCCHINI", "BASIC", 13, 80);
+	Pepper pepper = new Pepper("PEPPER", "BASIC", 22, 60);
+	Parsley parsley = new Parsley("PARSLEY", "EXTRA", 4, 15);
+	Radish radish = new Radish("RADISH", "BASIC", 16, 40);
+	Arugula arugula = new Arugula("ARUGULA", "EXTRA", 6, 20);
+	Onion onion = new Onion("ONION", "EXTRA", 4, 10);
+	Basil basil = new Basil("BASIL", "EXTRA", 6, 20);
+	OliveOil oil = new OliveOil("OLIVE OIL", "SAUCE", 155, 30);
+	Yogurt yogurt = new Yogurt("YOGURT", "SAUCE", 45, 30);
+	Sourcream cream = new Sourcream("SOURCREAM", "SAUCE", 85, 30);
 	
     @FXML
     void initialize() {    	
@@ -231,43 +231,43 @@ public class SampleController {
     	ObservableList<Salad> sortByKcalList = FXCollections.observableArrayList();
 
 
-    	deleteIngradientButton.setTooltip(new Tooltip("Видалення інградієнта"));
-    	deleteAllIngradientsButton.setTooltip(new Tooltip("Очистити все"));
-    	sortByCategoryButton.setTooltip(new Tooltip("Відсортувати по категоріям"));
-    	sortByKcalButton.setTooltip(new Tooltip("Відсортувати по калоріям"));
-    	sortByWeightButton.setTooltip(new Tooltip("Відсортувати по вазі"));
-    	exportToFile.setTooltip(new Tooltip("Зберегти у файл"));
-    	reloadWeightRangeButton.setTooltip(new Tooltip("Очистити поля вводу діапазону"));
-    	reloadKcalRangeButton.setTooltip(new Tooltip("Очистити поля вводу діапазону"));
+    	deleteIngradientButton.setTooltip(new Tooltip("Delete ingradient"));
+    	deleteAllIngradientsButton.setTooltip(new Tooltip("Clear all"));
+    	sortByCategoryButton.setTooltip(new Tooltip("Sort by categories"));
+    	sortByKcalButton.setTooltip(new Tooltip("Sort by calories"));
+    	sortByWeightButton.setTooltip(new Tooltip("Sort by weight"));
+    	exportToFile.setTooltip(new Tooltip("Export to file"));
+    	reloadWeightRangeButton.setTooltip(new Tooltip("Clear input data"));
+    	reloadKcalRangeButton.setTooltip(new Tooltip("Clear input data"));
 
     	/*
     	 
-    	 СОРТУВАННЯ ЕЛЕМЕНТІВ САЛАТУ ТА ВИВІД ІНГРАДІЄНТІВ У ВКАЗАНОМУ ДІАПАЗОНІ
+    	SORTING ELEMENTS BY RANGE
     	 
-    	 */
+    	*/
     	
     	sortByCategoryButton.setOnAction(event ->{    		
     		
     		if(!saladList.isEmpty()) {
     			listViewSorted.getItems().clear();
     			
-    			listViewSorted.getItems().add("Інградієнти відсортовані у порядку спадання: ");
+    			listViewSorted.getItems().add("Ingredients are sorted in descending order:");
     			
     			for(Salad ing : saladList) {
-    				if(ing.getCategory() == "БАЗОВИЙ") {    					
-    					listViewSorted.getItems().add(ing.getName() + " | Категорія: " + ing.getCategory());
+    				if(ing.getCategory() == "BASIC") {    					
+    					listViewSorted.getItems().add(ing.getName() + " | Category: " + ing.getCategory());
         			}
     			}
         				
         		for(Salad ing : saladList) {
-            		if(ing.getCategory() == "ДОДАТОК") {    					
-            			listViewSorted.getItems().add(ing.getName() + " | Категорія: " + ing.getCategory());
+            		if(ing.getCategory() == "EXTRA") {    					
+            			listViewSorted.getItems().add(ing.getName() + " | Category: " + ing.getCategory());
             		}		        
             	}
         		
         		for(Salad ing : saladList) {
-            		if(ing.getCategory() == "ЗАПРАВКА") {    					
-            			listViewSorted.getItems().add(ing.getName() + " | Категорія: " + ing.getCategory());
+            		if(ing.getCategory() == "SAUCE") {    					
+            			listViewSorted.getItems().add(ing.getName() + " | Category: " + ing.getCategory());
             		}		        
             	}  			
     		}
@@ -281,7 +281,7 @@ public class SampleController {
         		
         		FXCollections.sort(saladList, comparator);
         		listViewSorted.getItems().clear();
-        		listViewSorted.getItems().add("Інградієнти відсортовані у порядку спадання: ");
+        		listViewSorted.getItems().add("Ingredients are sorted in descending order:");
         			
         		for(Salad ing : saladList) {
         			printKcalSort(ing);
@@ -296,7 +296,7 @@ public class SampleController {
         		
         		FXCollections.sort(saladList, comparator);
         		listViewSorted.getItems().clear();        		 
-        		listViewSorted.getItems().add("Інградієнти відсортовані у порядку спадання: ");
+        		listViewSorted.getItems().add("Ingredients are sorted in descending order: ");
         			
         		for(Salad ing : saladList) {
             		printWeightSort(ing);
@@ -309,7 +309,7 @@ public class SampleController {
     		
     		if(getInputForWeight() && !saladList.isEmpty()) {
     			listViewSorted.getItems().clear();
-    			listViewSorted.getItems().add("Овочі, що підходять заданому діапазону:");
+    			listViewSorted.getItems().add("Vegetables suitable for a given range:");
     			for(Salad ing : saladList) {
     				if(ing.getWeight() >= minForWeight && ing.getWeight() <= maxForWeight) {    					
     					sortByWeightList.add(ing);
@@ -318,7 +318,7 @@ public class SampleController {
     			}
     			
     			if(sortByWeightList.isEmpty()) {
-    				listViewSorted.getItems().add("Немає співпадінь. Перевірте діапазон значень!");
+    				listViewSorted.getItems().add("Fail. Check input and try again");
     			}
     		}
     		
@@ -328,7 +328,7 @@ public class SampleController {
     		
     		if(getInputForKcal() && !saladList.isEmpty()) {
     			listViewSorted.getItems().clear();
-    			listViewSorted.getItems().add("Овочі, що підходять заданому діапазону:");
+    			listViewSorted.getItems().add("Vegetables suitable for a given range:");
     			for(Salad ing : saladList) {
     				if(ing.getCalories() >= minForKcal && ing.getCalories() <= maxForKcal) {    					
     					sortByKcalList.add(ing);    					    					
@@ -337,34 +337,34 @@ public class SampleController {
     			}
     			
     			if(sortByKcalList.isEmpty()) {
-    				listViewSorted.getItems().add("Немає співпадінь. Перевірте діапазон значень!");
+    				listViewSorted.getItems().add("Fail. Check input and try again");
     			}
     		}
     	});
     	
     	/*
       	 
-   	 	ЗАПИС САЛАТУ ДО ФАЙЛУ
+   	 	EXPORT TO FILE
    	 
     	*/    	
     	
     	exportToFile.setOnAction(event ->{
     		if(!saladList.isEmpty()) {
-    			File f = new File("D:\\Projects\\JavaProjects\\eclipseWorkspace\\The Chief\\SALAD.txt");
+    			File f = new File("C:\\Users\\user\\Desktop\\SALAD.txt");
         		
         		try {
     				PrintWriter pw = new PrintWriter(f);
-    				pw.println("Інградієнти вашого салату: ");
+    				pw.println("The ingradients for salad: ");
     				for(Salad ing : saladList) {
     					pw.println(ing.toString());
     				}
     				
-    				listView.getItems().add("\nЗапис до файлу пройшов успішно!");				
+    				listView.getItems().add("\nSuccess");				
     				pw.close();
     				
     			} catch (FileNotFoundException e) {
     				listViewSorted.getItems().clear();
-    				listViewSorted.getItems().add("Файл не знайдено");
+    				listViewSorted.getItems().add("File doesn`t exist");
     			}
     		}
     		
@@ -372,7 +372,7 @@ public class SampleController {
     	
     	/*
    	 
-   	 	РЕАЛІЗАЦІЯ ДОДАВАННЯ ІНГРАДІЄНТІВ-ОВОЧЕЙ ДО САЛАТУ
+   	 	ADD VEGETABLES TO THE SALAD
    	 
     	*/
     	
@@ -438,8 +438,7 @@ public class SampleController {
     		
     		if(!saladList.contains(lettuce)) {
     			saladList.add(lettuce);
-    			listView.getItems().add(lettuce.getName() + "\t  " + lettuce.getCategory() + 
-        				"\t\t     " + lettuce.getCalories() + "\t\t\t   " + lettuce.getWeight() + " г.");
+    			printIngradientToListView(lettuce);
     			
     			totalKcal += lettuce.getCalories();
         		totalWeight += lettuce.getWeight();
@@ -459,8 +458,7 @@ public class SampleController {
 
     		if(!saladList.contains(cucumber)) {
     			saladList.add(cucumber);
-    			listView.getItems().add("    " + cucumber.getName() + "\t\t  " + cucumber.getCategory() + 
-        				"\t\t     " + cucumber.getCalories() + "\t\t\t   " + cucumber.getWeight() + " г.");
+    			printIngradientToListView(cucumber);
     			
     			totalKcal += cucumber.getCalories();
         		totalWeight += cucumber.getWeight();
@@ -498,8 +496,7 @@ public class SampleController {
     		
     		if(!saladList.contains(pepper)) {
     			saladList.add(pepper);
-    			listView.getItems().add("    " + pepper.getName() + "\t\t  " + pepper.getCategory() + 
-        				"\t\t     " + pepper.getCalories() + "\t\t\t   " + pepper.getWeight() + " г.");
+    			printIngradientToListView(pepper);
     			
     			totalKcal += pepper.getCalories();
         		totalWeight += pepper.getWeight();
@@ -575,8 +572,7 @@ public class SampleController {
 
     		if(!saladList.contains(arugula)) {
     			saladList.add(arugula);
-    			listView.getItems().add("  " + arugula.getName() + "\t\t\t  " + arugula.getCategory() + 
-        				"\t\t     " + arugula.getCalories() + "\t\t\t   " + arugula.getWeight() + " г.");
+    			printIngradientToListView(arugula);
     			
     			totalKcal += arugula.getCalories();
         		totalWeight += arugula.getWeight();
@@ -595,8 +591,7 @@ public class SampleController {
 
     		if(!saladList.contains(basil)) {
     			saladList.add(basil);
-    			listView.getItems().add("  " + basil.getName() + "\t\t\t  " + basil.getCategory() + 
-        				"\t\t     " + basil.getCalories() + "\t\t\t   " + basil.getWeight() + " г.");
+    			printIngradientToListView(basil);
     			
     			totalKcal += basil.getCalories();
         		totalWeight += basil.getWeight();
@@ -613,7 +608,7 @@ public class SampleController {
     	
     	/*
    	 
-   	 	РЕАЛІЗАЦІЯ ДОДАВАННЯ ІНГРАДІЄНТІВ-ЗАПРАВОК ДО САЛАТУ
+   	 	ADD SAUCES TO THE SALAD
    	 
     	*/
     	
@@ -680,9 +675,9 @@ public class SampleController {
     	
     	/*
     	 
-    	  ПРИГОТОВЛЕННІ САЛАТИ
+    	PREPARED SALADS
     	  
-    	 */
+    	*/
     	
     	winterSaladButton.setOnAction(event ->{
     		listView.getItems().clear();
@@ -750,7 +745,7 @@ public class SampleController {
     	
     	/*
      	 
-   	 	ОЧИЩЕННЯ ДІАПАЗОНУ ВВОДУ ДЛЯ СОРТУВАННЯ ІНГРАДІЄНТІВ САЛАТУ
+   	 	CLEAR INPUT FIELDS
    	 
     	*/
     	
@@ -772,7 +767,7 @@ public class SampleController {
     	
     	/*
       	 
-   	 	ВИДАЛЕННЯ ІНГРАДІЄНТІВ З САЛАТУ
+   	 	DELETING INGRADIENTS FROM THE SALAD
    	 
     	*/
     	
@@ -812,7 +807,7 @@ public class SampleController {
     	
     	/*
      	 
-   	 	ДОДАТКОВА ІНФОРМАЦІЯ
+   	 	ADDITIONAL INFORMATION WINDOW
    	 
     	*/
     	

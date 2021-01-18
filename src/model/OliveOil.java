@@ -1,8 +1,8 @@
 package model;
 
-public class Oil extends Addings {
+public class OliveOil extends Sauce {
 
-	public Oil(String name, String category, double kcal, double weight) {
+	public OliveOil(String name, String category, double kcal, double weight) {
 		super(name, category, kcal, weight);
 	}
 

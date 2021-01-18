@@ -53,7 +53,6 @@ public class Salad implements Comparable<Salad>{
 
 	@Override
 	public int compareTo(Salad o) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
